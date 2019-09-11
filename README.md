@@ -6,7 +6,7 @@ This repository is the result of my 3-part blog on using AVPlayer in SwiftUI:
 * [AVPlayer & SwiftUI Part 2: Player Controls](https://medium.com/@chris.mash/avplayer-swiftui-part-2-player-controls-c28b721e7e27)
 * [AVPlayer & SwiftUI Part 3: More Player Controls]()
 
-Disclaimer: I'm no SwiftUI pro, there are things about this code that don't feel right but it works. And that's something 😁. I'll try and improve it over time!
+Disclaimer: I'm no SwiftUI pro, there are things about this code that don't feel right but it works. And that's something 😁. I'll try and improve it over time! This code is also not battle tested, but seems to be ok!
 
 The following diagram shows the view structs/classes in ContentView.swift:
 
