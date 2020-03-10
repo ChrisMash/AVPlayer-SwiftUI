@@ -1,0 +1,37 @@
+@startuml
+
+class AudioView << (S,#777700) >> {
+  +player
+}
+
+class AudioPlayerControlsView << (S,#777700) >> {
+  +player
+  +itemObserver
+  +timeObserver
+  +durationObserver
+}
+
+class PlayerItemObserver {
+  +publisher
+}
+
+class PlayerTimeObserver {
+  +publisher
+  +pause(Bool)
+}
+
+class PlayerDurationObserver {
+  +publisher
+}
+
+AudioPlayerControlsView *-- AudioView
+
+PlayerItemObserver *-- AudioPlayerControlsView
+PlayerTimeObserver *-- AudioPlayerControlsView
+PlayerDurationObserver *-- AudioPlayerControlsView
+
+note top of PlayerDurationObserver : Player observation done in these classes
+note right of AudioPlayerControlsView : Observed updates listened to here
+
+@enduml
+

@@ -1,0 +1,35 @@
+@startuml
+
+class VideoPlayerContainerView << (S,#777700) >> {
+  +@State videoPos
+  +@State videoDuration
+  +@State seeking
+}
+
+class VideoPlayerControlsView << (S,#777700) >> {
+  +@Binding videoPos
+  +@Binding videoDuration
+  +@Binding seeking
+}
+
+class VideoPlayerView << (S,#777700) >> {
+  +@Binding videoPos
+  +@Binding videoDuration
+  +@Binding seeking
+}
+
+class VideoPlayerUIView {
+  +@Binding videoPos
+  +@Binding videoDuration
+  +@Binding seeking
+}
+
+VideoPlayerControlsView *-- VideoPlayerContainerView
+VideoPlayerView *-- VideoPlayerContainerView
+VideoPlayerUIView *-- VideoPlayerView
+
+note right of VideoPlayerUIView : This is where we observe the player
+note right of VideoPlayerControlsView : This is where we use the observed values
+note right of VideoPlayerContainerView : This is where we store the state for the observed values
+
+@enduml

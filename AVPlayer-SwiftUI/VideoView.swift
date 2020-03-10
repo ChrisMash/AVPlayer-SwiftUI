@@ -10,7 +10,7 @@ import SwiftUI
 import AVFoundation
 
 // This is the UIView that contains the AVPlayerLayer for rendering the video
-class PlayerUIView: UIView {
+class VideoPlayerUIView: UIView {
     private let player: AVPlayer
     private let playerLayer = AVPlayerLayer()
     private let videoPos: Binding<Double>
@@ -77,28 +77,28 @@ class PlayerUIView: UIView {
 }
 
 // This is the SwiftUI view which wraps the UIKit-based PlayerUIView above
-struct PlayerView: UIViewRepresentable {
+struct VideoPlayerView: UIViewRepresentable {
     @Binding private(set) var videoPos: Double
     @Binding private(set) var videoDuration: Double
     @Binding private(set) var seeking: Bool
     
     let player: AVPlayer
     
-    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<PlayerView>) {
+    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<VideoPlayerView>) {
         // This function gets called if the bindings change, which could be useful if
         // you need to respond to external changes, but we don't in this example
     }
     
-    func makeUIView(context: UIViewRepresentableContext<PlayerView>) -> UIView {
-        let uiView = PlayerUIView(player: player,
-                                  videoPos: $videoPos,
-                                  videoDuration: $videoDuration,
-                                  seeking: $seeking)
+    func makeUIView(context: UIViewRepresentableContext<VideoPlayerView>) -> UIView {
+        let uiView = VideoPlayerUIView(player: player,
+                                       videoPos: $videoPos,
+                                       videoDuration: $videoDuration,
+                                       seeking: $seeking)
         return uiView
     }
     
     static func dismantleUIView(_ uiView: UIView, coordinator: ()) {
-        guard let playerUIView = uiView as? PlayerUIView else {
+        guard let playerUIView = uiView as? VideoPlayerUIView else {
             return
         }
         
@@ -107,7 +107,7 @@ struct PlayerView: UIViewRepresentable {
 }
 
 // This is the SwiftUI view that contains the controls for the player
-struct PlayerControlsView : View {
+struct VideoPlayerControlsView : View {
     @Binding private(set) var videoPos: Double
     @Binding private(set) var videoDuration: Double
     @Binding private(set) var seeking: Bool
@@ -170,7 +170,7 @@ struct PlayerControlsView : View {
 }
 
 // This is the SwiftUI view which contains the player and its controls
-struct PlayerContainerView : View {
+struct VideoPlayerContainerView : View {
     // The progress through the video, as a percentage (from 0 to 1)
     @State private var videoPos: Double = 0
     // The duration of the video in seconds
@@ -186,21 +186,25 @@ struct PlayerContainerView : View {
   
     var body: some View {
         VStack {
-            PlayerView(videoPos: $videoPos, videoDuration: $videoDuration, seeking: $seeking, player: player)
-            PlayerControlsView(videoPos: $videoPos, videoDuration: $videoDuration, seeking: $seeking, player: player)
+            VideoPlayerView(videoPos: $videoPos,
+                            videoDuration: $videoDuration,
+                            seeking: $seeking,
+                            player: player)
+            VideoPlayerControlsView(videoPos: $videoPos,
+                                    videoDuration: $videoDuration,
+                                    seeking: $seeking,
+                                    player: player)
+        }
+        .onDisappear {
+            // When this View isn't being shown anymore stop the player
+            self.player.replaceCurrentItem(with: nil)
         }
     }
 }
 
 // This is the main SwiftUI view for this app, containing a single PlayerContainerView
-struct ContentView: View {
+struct VideoView: View {
     var body: some View {
-        PlayerContainerView(url: URL(string: "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8")!)
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+        VideoPlayerContainerView(url: URL(string: "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8")!)
     }
 }

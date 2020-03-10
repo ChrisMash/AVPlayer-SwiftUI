@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C733A11241500B20014FF72 /* AudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C733A10241500B20014FF72 /* AudioView.swift */; };
+		0C733A13241500DB0014FF72 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C733A12241500DB0014FF72 /* MenuView.swift */; };
 		0C8DC067232900B3000B067C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8DC066232900B3000B067C /* AppDelegate.swift */; };
 		0C8DC069232900B3000B067C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8DC068232900B3000B067C /* SceneDelegate.swift */; };
-		0C8DC06B232900B3000B067C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8DC06A232900B3000B067C /* ContentView.swift */; };
+		0C8DC06B232900B3000B067C /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8DC06A232900B3000B067C /* VideoView.swift */; };
 		0C8DC06D232900BA000B067C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C8DC06C232900BA000B067C /* Assets.xcassets */; };
 		0C8DC070232900BA000B067C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C8DC06F232900BA000B067C /* Preview Assets.xcassets */; };
 		0C8DC073232900BA000B067C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C8DC071232900BA000B067C /* LaunchScreen.storyboard */; };
@@ -17,10 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C733A10241500B20014FF72 /* AudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioView.swift; sourceTree = "<group>"; };
+		0C733A12241500DB0014FF72 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		0C8DC063232900B3000B067C /* AVPlayer-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AVPlayer-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C8DC066232900B3000B067C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C8DC068232900B3000B067C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0C8DC06A232900B3000B067C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0C8DC06A232900B3000B067C /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		0C8DC06C232900BA000B067C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C8DC06F232900BA000B067C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0C8DC072232900BA000B067C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,7 +64,9 @@
 			children = (
 				0C8DC066232900B3000B067C /* AppDelegate.swift */,
 				0C8DC068232900B3000B067C /* SceneDelegate.swift */,
-				0C8DC06A232900B3000B067C /* ContentView.swift */,
+				0C733A12241500DB0014FF72 /* MenuView.swift */,
+				0C8DC06A232900B3000B067C /* VideoView.swift */,
+				0C733A10241500B20014FF72 /* AudioView.swift */,
 				0C8DC07A23290175000B067C /* Utility.swift */,
 				0C8DC06C232900BA000B067C /* Assets.xcassets */,
 				0C8DC071232900BA000B067C /* LaunchScreen.storyboard */,
@@ -150,9 +156,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C8DC07B23290175000B067C /* Utility.swift in Sources */,
+				0C733A13241500DB0014FF72 /* MenuView.swift in Sources */,
+				0C733A11241500B20014FF72 /* AudioView.swift in Sources */,
 				0C8DC067232900B3000B067C /* AppDelegate.swift in Sources */,
 				0C8DC069232900B3000B067C /* SceneDelegate.swift in Sources */,
-				0C8DC06B232900B3000B067C /* ContentView.swift in Sources */,
+				0C8DC06B232900B3000B067C /* VideoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
