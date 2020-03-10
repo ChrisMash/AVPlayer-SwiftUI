@@ -4,10 +4,10 @@ This repository is the result of my 4-part blog on using AVPlayer in SwiftUI:
 
 * [AVPlayer & SwiftUI](https://medium.com/@chris.mash/avplayer-swiftui-b87af6d0553)
 * [AVPlayer & SwiftUI Part 2: Player Controls](https://medium.com/@chris.mash/avplayer-swiftui-part-2-player-controls-c28b721e7e27)
-* [AVPlayer & SwiftUI Part 3: More Player Controls]()
+* [AVPlayer & SwiftUI Part 3: More Player Controls](https://medium.com/@chris.mash/avplayer-swiftui-part-3-more-player-controls-e64558875f8e)
 * [AVPlayer & SwiftUI Part 4: Better Player Observing](https://medium.com/@chris.mash/avplayer-swiftui-part-4-better-player-observing-3e5c3f24419d)
 
-Disclaimer: I'm no SwiftUI pro, there are things about this code that don't feel right but it works. And that's something 😁. I'll try and improve it over time!
+Disclaimer: I'm no SwiftUI pro, there are things about this code that don't feel right but it works. And that's something 😁. I'll try and improve it over time! This code is also not battle tested, but seems to be ok!
 
 The app starts off with a menu to select between a video player or an audio player. Parts 1-3 refer to the video player. Part 4 refers to the audio player.
 
