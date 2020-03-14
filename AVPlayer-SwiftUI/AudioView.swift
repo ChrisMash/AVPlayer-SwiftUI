@@ -65,6 +65,13 @@ struct AudioPlayerControlsView: View {
             self.currentTime = 0
             self.currentDuration = 0
         }
+        // TODO the below could replace the above but causes a crash
+//        // Listen out for the player's item changing
+//        .onReceive(player.publisher(for: \.currentItem)) { item in
+//            self.state = item != nil ? .buffering : .waitingForSelection
+//            self.currentTime = 0
+//            self.currentDuration = 0
+//        }
     }
     
     // MARK: Private functions
@@ -175,37 +182,18 @@ class PlayerItemObserver {
 
 class PlayerDurationObserver {
     let publisher = PassthroughSubject<TimeInterval, Never>()
-    private let itemObserver: PlayerItemObserver
-    private var itemObserverCancellable: AnyCancellable?
-    private var durationObservation: NSKeyValueObservation?
+    private var cancellable: AnyCancellable?
     
     init(player: AVPlayer) {
-        itemObserver = PlayerItemObserver(player: player)
-        // Listen out for the itemObserver publishing a change to the player's item
-        itemObserverCancellable = itemObserver.publisher.sink { hasItem in
-            if let existingObserver = self.durationObservation {
-                existingObserver.invalidate()
-                self.durationObservation = nil
-            }
-            
-            if hasItem {
-                // Observe the duration of this new item changing (becoming known)
-                self.durationObservation = player.currentItem?.observe(\.duration) { [weak self] item, change in
-                    guard let self = self else { return }
-                    // Publish the new duration
-                    self.publisher.send(item.duration.seconds)
-                }
-            }
+        let durationKeyPath: KeyPath<AVPlayer, CMTime?> = \.currentItem?.duration
+        cancellable = player.publisher(for: durationKeyPath).sink { duration in
+            guard let duration = duration else { return }
+            guard duration.isNumeric else { return }
+            self.publisher.send(duration.seconds)
         }
     }
     
     deinit {
-        if let observer = durationObservation {
-            observer.invalidate()
-        }
-        
-        if let cancellable = itemObserverCancellable {
-            cancellable.cancel()
-        }
+        cancellable?.cancel()
     }
 }
