@@ -17,7 +17,7 @@ The following diagram shows the view structs/classes in VideoView.swift:
 
 *(multiple structs/classes in a single file? Yep, I think it's easier to learn from with all these small structs/classes all in the same file, but maybe don't structure your own code this way)*
 
-![alt text](https://github.com/ChrisMash/AVPlayer-SwiftUI/blob/master/uml-videoview.png "Structs/classes in VideoView.swift")
+![alt text](https://github.com/ChrisMash/AVPlayer-SwiftUI/blob/master/img/uml-videoview.png "Structs/classes in VideoView.swift")
 
 The annotations show one of the first things that isn't quite right. VideoPlayerUIView doesn't actually care about the videoPos, videoDuration or seeking values, only VideoPlayerControlsView does. But at the time of writing part 3 of the blog series it was the only way I'd found to make it work.
 
@@ -29,4 +29,4 @@ Part 4 also allows switching what the player is playing, which was a bit of a pr
 
 The following diagram shows the view structs/classes in AudioView.swift:
 
-![alt text](https://github.com/ChrisMash/AVPlayer-SwiftUI/blob/master/uml-audioview.png "Structs/classes in AudioView.swift")
+![alt text](https://github.com/ChrisMash/AVPlayer-SwiftUI/blob/master/img/uml-audioview.png "Structs/classes in AudioView.swift")
