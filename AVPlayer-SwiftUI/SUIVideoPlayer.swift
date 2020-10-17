@@ -12,13 +12,12 @@ import AVKit
 struct SUIVideoPlayer: View {
     private let player = AVPlayer(url: URL(string: "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8")!)
     
-    init() {
-        // start the player playing, controls don't appear without this
-        player.play()
-    }
-    
     var body: some View {
         VideoPlayer(player: player)
+            .onAppear() {
+                // Start the player going, otherwise controls don't appear
+                player.play()
+            }
     }
 }
 
