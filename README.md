@@ -6,6 +6,7 @@ This repository is the result of my 4-part blog on using AVPlayer in SwiftUI:
 * [AVPlayer & SwiftUI Part 2: Player Controls](https://medium.com/@chris.mash/avplayer-swiftui-part-2-player-controls-c28b721e7e27)
 * [AVPlayer & SwiftUI Part 3: More Player Controls](https://medium.com/@chris.mash/avplayer-swiftui-part-3-more-player-controls-e64558875f8e)
 * [AVPlayer & SwiftUI Part 4: Better Player Observing](https://medium.com/@chris.mash/avplayer-swiftui-part-4-better-player-observing-3e5c3f24419d)
+* [AVPlayer & SwiftUI Part 5: VideoPlayer is here!]()
 
 Disclaimer: I'm no SwiftUI pro, there are things about this code that don't feel right but it works. And that's something 😁. I'll try and improve it over time! This code is also not battle tested, but seems to be ok!
 
@@ -30,3 +31,14 @@ Part 4 also allows switching what the player is playing, which was a bit of a pr
 The following diagram shows the view structs/classes in AudioView.swift:
 
 ![alt text](https://github.com/ChrisMash/AVPlayer-SwiftUI/blob/master/img/uml-audioview.png "Structs/classes in AudioView.swift")
+
+## Part 5: VideoPlayer is here!
+
+With the unveiling of iOS 14 at WWDC20 we now have `VideoPlayer` available as a `View` in SwiftUI! So that almost does away with the need for parts 1-4 in this series! Look how much simpler it is:
+
+![alt text](https://github.com/ChrisMash/AVPlayer-SwiftUI/blob/master/img/uml-videoplayer.png "SwiftUI's own VideoPlayer View")
+
+`VideoPlayer` is SwiftUI's answer to `AVPlayerViewController`, so if you're happy with the default controls you can drop it right in and get easy video playback with minimal effort.
+
+If, on the other hand, you want some custom UI then parts 1-4 of this blog series will give you some clues as to how to achieve that.
+

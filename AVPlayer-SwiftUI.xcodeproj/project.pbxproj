@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C733A11241500B20014FF72 /* AudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C733A10241500B20014FF72 /* AudioView.swift */; };
 		0C733A13241500DB0014FF72 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C733A12241500DB0014FF72 /* MenuView.swift */; };
+		0C880338253B333400E196D7 /* SUIVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C880337253B332D00E196D7 /* SUIVideoPlayer.swift */; };
 		0C8DC067232900B3000B067C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8DC066232900B3000B067C /* AppDelegate.swift */; };
 		0C8DC069232900B3000B067C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8DC068232900B3000B067C /* SceneDelegate.swift */; };
 		0C8DC06B232900B3000B067C /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8DC06A232900B3000B067C /* VideoView.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		0C733A10241500B20014FF72 /* AudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioView.swift; sourceTree = "<group>"; };
 		0C733A12241500DB0014FF72 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		0C880337253B332D00E196D7 /* SUIVideoPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUIVideoPlayer.swift; sourceTree = "<group>"; };
 		0C8DC063232900B3000B067C /* AVPlayer-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AVPlayer-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C8DC066232900B3000B067C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C8DC068232900B3000B067C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				0C733A12241500DB0014FF72 /* MenuView.swift */,
 				0C8DC06A232900B3000B067C /* VideoView.swift */,
 				0C733A10241500B20014FF72 /* AudioView.swift */,
+				0C880337253B332D00E196D7 /* SUIVideoPlayer.swift */,
 				0C8DC07A23290175000B067C /* Utility.swift */,
 				0C8DC06C232900BA000B067C /* Assets.xcassets */,
 				0C8DC071232900BA000B067C /* LaunchScreen.storyboard */,
@@ -111,7 +114,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Chris Mash";
 				TargetAttributes = {
 					0C8DC062232900B3000B067C = {
@@ -158,6 +161,7 @@
 				0C8DC07B23290175000B067C /* Utility.swift in Sources */,
 				0C733A13241500DB0014FF72 /* MenuView.swift in Sources */,
 				0C733A11241500B20014FF72 /* AudioView.swift in Sources */,
+				0C880338253B333400E196D7 /* SUIVideoPlayer.swift in Sources */,
 				0C8DC067232900B3000B067C /* AppDelegate.swift in Sources */,
 				0C8DC069232900B3000B067C /* SceneDelegate.swift in Sources */,
 				0C8DC06B232900B3000B067C /* VideoView.swift in Sources */,
@@ -204,6 +208,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -264,6 +269,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -301,6 +307,7 @@
 				DEVELOPMENT_TEAM = 8C4U2M3TZ4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "AVPlayer-SwiftUI/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -321,6 +328,7 @@
 				DEVELOPMENT_TEAM = 8C4U2M3TZ4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "AVPlayer-SwiftUI/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -1,0 +1,8 @@
+@startuml
+
+class VideoPlayer << (S,#777700) >> {
+  +player
+}
+
+@enduml
+
