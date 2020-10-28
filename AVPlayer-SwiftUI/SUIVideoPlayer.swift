@@ -18,6 +18,10 @@ struct SUIVideoPlayer: View {
                 // Start the player going, otherwise controls don't appear
                 player.play()
             }
+            .onDisappear() {
+                // Stop the player when the view disappears
+                player.pause()
+            }
     }
 }
 
